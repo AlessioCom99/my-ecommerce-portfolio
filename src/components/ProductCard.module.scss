@@ -1,0 +1,68 @@
+// src/components/ProductCard.module.scss
+@import "../styles/variables";
+
+.card {
+  background-color: $color-white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none; // Rimuove la sottolineatura del Link
+  color: $color-text;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  display: flex; // Usiamo flex per organizzare il contenuto
+  flex-direction: column;
+  height: 100%; // Fa sì che le card abbiano la stessa altezza nella griglia
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.imageContainer {
+  height: 250px; // Altezza fissa per l'immagine
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff; // Sfondo bianco pulito
+}
+
+.image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; // Assicura che l'immagine si veda tutta
+}
+
+.info {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  // 'flex-grow: 1' fa sì che questa sezione occupi lo spazio
+  // rimanente, spingendo il prezzo in basso (se fossero separati)
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Spinge titolo e prezzo ai lati
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+
+  // Trucco per tagliare il testo dopo 2 righe
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.9em; // Circa 2 righe di testo
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $color-primary;
+}

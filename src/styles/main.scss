@@ -1,13 +1,15 @@
-// src/styles/main.scss
+// Importa prima le variabili e il reset
 @import "variables";
 @import "reset";
 
+// Stili globali per l'intero sito
 body {
   font-family: $font-main;
   background-color: $color-background;
   color: $color-text;
 }
 
+// Classe 'utility' per centrare il contenuto
 .container {
   max-width: 1200px;
   margin: 0 auto;

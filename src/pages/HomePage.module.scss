@@ -1,11 +1,7 @@
-// src/pages/HomePage.module.scss
-
 .productGrid {
   display: grid;
-  // Crea colonne automatiche:
-  // - Cerca di farle larghe 300px (minmax)
-  // - "auto-fit" riempie lo spazio
-  // - "1fr" è la frazione di spazio
+  // Crea colonne "responsive": larghe almeno 280px,
+  // e si adattano per riempire lo spazio (auto-fit)
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem; // Spazio tra le card
   padding: 1rem 0;

@@ -1,27 +1,21 @@
-// src/hooks/useFetchData.ts
 import { useState, useEffect } from "react";
 
-// 1. Definiamo l'interfaccia per lo stato che il nostro hook restituirà
+// Interfaccia per descrivere lo stato del nostro hook
 interface FetchState<T> {
-  data: T | null; // I dati (di tipo generico T) o null se non ancora caricati
-  loading: boolean; // True se stiamo caricando
-  error: string | null; // Un messaggio di errore o null se non c'è errore
+  data: T | null; // I dati (di tipo generico T)
+  loading: boolean; // True se sta caricando
+  error: string | null; // Messaggio di errore
 }
 
-// 2. Definiamo il Custom Hook.
-//    Usiamo un "Tipo Generico" <T> per renderlo riutilizzabile.
-//    Potrà fetchare Prodotti, Utenti, o qualsiasi cosa.
+// Un hook "generico" <T> che accetta un URL
 function useFetchData<T>(url: string): FetchState<T> {
-  // 3. Definiamo i tre stati
+  // Stati per gestire i dati, il caricamento e gli errori
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // 4. Usiamo useEffect per eseguire la chiamata API quando
-  //    il componente (che userà questo hook) viene montato
-  //    o quando l'URL cambia.
+  // Esegue la chiamata API quando l'URL cambia
   useEffect(() => {
-    // Creiamo una funzione asincrona interna per gestire la chiamata
     const fetchData = async () => {
       setLoading(true); // Inizia il caricamento
       setError(null);
@@ -29,31 +23,26 @@ function useFetchData<T>(url: string): FetchState<T> {
       try {
         const response = await fetch(url);
 
+        // Se la risposta non è "OK" (es. 404), lancia un errore
         if (!response.ok) {
-          // Se la risposta del server non è OK (es. 404, 500)
           throw new Error(`Errore: ${response.status}`);
         }
 
-        const jsonData = (await response.json()) as T; // Diciamo a TS che il JSON è di tipo T
-        setData(jsonData);
+        const jsonData = (await response.json()) as T;
+        setData(jsonData); // Salva i dati nello stato
       } catch (e) {
-        // Se c'è un errore di rete o nel parsing
-        if (e instanceof Error) {
-          setError(e.message);
-        } else {
-          setError("Errore sconosciuto durante il fetch");
-        }
+        // Salva il messaggio di errore
+        if (e instanceof Error) setError(e.message);
       } finally {
-        // 5. In ogni caso (successo o errore),
-        //    il caricamento è terminato
+        // In ogni caso, il caricamento è finito
         setLoading(false);
       }
     };
 
-    fetchData(); // Eseguiamo la funzione
-  }, [url]); // L'array di dipendenze: riesegue l'effetto se l'URL cambia
+    fetchData(); // Esegui la funzione
+  }, [url]); // L'array di dipendenze: riesegue questo effetto se l'URL cambia
 
-  // 6. Restituiamo l'oggetto con i tre stati
+  // Restituisce l'oggetto con i tre stati
   return { data, loading, error };
 }
 

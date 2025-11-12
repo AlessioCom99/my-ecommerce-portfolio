@@ -1,11 +1,11 @@
-// src/pages/ProductDetailPage.tsx
 import React from "react";
-import { useParams } from "react-router-dom"; // IMPORTA useParams
+import { useParams } from "react-router-dom"; // Hook per leggere l'URL
 import useFetchData from "../hooks/useFetchData";
 import type { Product } from "../types/Product";
 import styles from "./ProductDetailPage.module.scss";
+import { useCart } from "../context/CartContext"; // Hook per il carrello
 
-// Importiamo la funzione per formattare il prezzo
+// Funzione utility per formattare il prezzo
 const formatPrice = (price: number) => {
   return new Intl.NumberFormat("it-IT", {
     style: "currency",
@@ -14,17 +14,19 @@ const formatPrice = (price: number) => {
 };
 
 const ProductDetailPage = () => {
-  // 1. Usiamo useParams per leggere i parametri dall'URL
-  //    Il nome "id" deve corrispondere a quello in App.tsx (:id)
+  // 1. Legge l'ID dall'URL (es. "/product/5" -> id = "5")
   const { id } = useParams<{ id: string }>();
 
-  // 2. Creiamo un URL dinamico per l'API
+  // 2. Crea l'URL dinamico per l'API
   const apiUrl = `https://fakestoreapi.com/products/${id}`;
 
-  // 3. Usiamo il nostro hook. Stavolta il tipo generico è Product (singolo)
+  // 3. Fetcha i dati per UN solo prodotto
   const { data: product, loading, error } = useFetchData<Product>(apiUrl);
 
-  // 4. Gestiamo i soliti stati
+  // 4. Accede alla funzione 'addToCart' dal contesto
+  const { addToCart } = useCart();
+
+  // Gestione stati di caricamento ed errore
   if (loading) {
     return (
       <div className={`${styles.loading} container`}>
@@ -32,20 +34,22 @@ const ProductDetailPage = () => {
       </div>
     );
   }
-
   if (error) {
     return <div className={`${styles.error} container`}>Errore: {error}</div>;
   }
-
-  // 5. Se il prodotto non viene trovato (ma non c'è errore),
-  //    è buona norma mostrare un messaggio
   if (!product) {
     return (
       <div className={`${styles.error} container`}>Prodotto non trovato.</div>
     );
   }
 
-  // 6. Mostriamo i dettagli del prodotto
+  // 5. Funzione chiamata al click del pulsante
+  const handleAddToCart = () => {
+    addToCart(product); // Aggiunge il prodotto corrente
+    alert("Prodotto aggiunto al carrello!");
+  };
+
+  // 6. Mostra i dettagli
   return (
     <div className={`${styles.pageContainer} container`}>
       <div className={styles.detailLayout}>
@@ -70,7 +74,10 @@ const ProductDetailPage = () => {
           <p className={styles.price}>{formatPrice(product.price)}</p>
           <p className={styles.description}>{product.description}</p>
 
-          <button className={styles.addToCartButton}>
+          <button
+            className={styles.addToCartButton}
+            onClick={handleAddToCart} // Collega la funzione al click
+          >
             Aggiungi al Carrello
           </button>
         </div>

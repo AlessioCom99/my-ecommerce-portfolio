@@ -1,12 +1,10 @@
-// src/types/Product.ts
-
-// Definiamo prima la struttura del rating
+// Definiamo prima la "forma" dell'oggetto rating
 export interface Rating {
   rate: number;
   count: number;
 }
 
-// Definiamo la struttura principale del prodotto
+// Definiamo la "forma" principale del prodotto
 export interface Product {
   id: number;
   title: string;
@@ -14,5 +12,5 @@ export interface Product {
   description: string;
   category: string;
   image: string;
-  rating: Rating; // Usiamo l'interfaccia Rating che abbiamo definito sopra
+  rating: Rating; // Usiamo l'interfaccia Rating definita sopra
 }

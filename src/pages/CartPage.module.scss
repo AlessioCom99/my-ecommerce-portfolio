@@ -1,0 +1,75 @@
+@import "../styles/variables";
+
+.emptyCart {
+  text-align: center;
+  padding: 4rem 0;
+  font-size: 1.2rem;
+}
+
+.cartItem {
+  display: flex;
+  background-color: $color-white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.info {
+  flex-grow: 1; // Occupa lo spazio disponibile
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $color-text;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.quantity {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.actions {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.removeButton {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: darken(#e63946, 10%);
+  }
+}
+
+.total {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}

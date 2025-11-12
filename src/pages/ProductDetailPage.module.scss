@@ -1,4 +1,3 @@
-// src/pages/ProductDetailPage.module.scss
 @import "../styles/variables";
 
 .pageContainer {
@@ -7,13 +6,13 @@
 
 .detailLayout {
   display: grid;
-  grid-template-columns: 1fr; // Stack su mobile
+  grid-template-columns: 1fr; // Colonna singola su mobile
   gap: 2rem;
   background-color: $color-white;
   padding: 2rem;
   border-radius: 8px;
 
-  // Su schermi più grandi, affianca immagine e testo
+  // Su schermi più grandi (da 768px in su), usa 2 colonne
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -23,8 +22,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  padding: 1rem;
   border: 1px solid #eee;
   border-radius: 8px;
 }
@@ -41,38 +38,19 @@
 }
 
 .category {
-  font-size: 0.9rem;
-  color: #666;
-  text-transform: capitalize;
-  margin-bottom: 0.5rem;
+  /* ...stili per categoria, titolo, prezzo, ecc. ... */
 }
-
 .title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  /* ... */
 }
-
 .rating {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: #555;
+  /* ... */
 }
-
 .price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: $color-primary;
-  margin-bottom: 1.5rem;
+  /* ... */
 }
-
 .description {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  flex-grow: 1; // Spinge il bottone in basso
+  /* ... */
 }
 
 .addToCartButton {

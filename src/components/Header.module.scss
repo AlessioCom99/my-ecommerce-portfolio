@@ -1,5 +1,4 @@
-// src/components/Header.module.scss
-@import "../styles/variables"; // Importiamo le variabili
+@import "../styles/variables"; // Importa le variabili di colore
 
 .header {
   background-color: $color-primary;
@@ -17,11 +16,13 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: $color-white;
+  text-decoration: none;
 }
 
 .nav {
   a {
-    // Stile SCSS "annidato"
+    // Stile "annidato" grazie a SCSS
     color: $color-white;
     text-decoration: none;
     margin-left: 1.5rem;

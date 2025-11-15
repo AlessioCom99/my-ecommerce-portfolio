@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom"; // Hook per leggere l'URL
 import useFetchData from "../hooks/useFetchData";
 import type { Product } from "../types/Product";

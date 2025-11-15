@@ -1,4 +1,3 @@
-import React from "react";
 import useFetchData from "../hooks/useFetchData";
 import type { Product } from "../types/Product"; // Importa il TIPO
 import ProductCard from "../components/ProductCard";

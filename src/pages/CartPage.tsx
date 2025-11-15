@@ -1,4 +1,3 @@
-import React from "react";
 import { useCart } from "../context/CartContext"; // Importa l'hook del carrello
 import styles from "./CartPage.module.scss";
 import { Link } from "react-router-dom";

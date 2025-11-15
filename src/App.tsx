@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CartPage from "./pages/CartPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
 
           {/* URL "/cart" mostra la CartPage */}
           <Route path="/cart" element={<CartPage />} />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

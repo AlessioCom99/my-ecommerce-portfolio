@@ -1,34 +1,33 @@
+// src/pages/ProductDetailPage.module.scss
 @import "../styles/variables";
 
 .pageContainer {
-  padding: 2rem 0;
+  padding: 3rem 0; // Più padding
 }
 
 .detailLayout {
   display: grid;
-  grid-template-columns: 1fr; // Colonna singola su mobile
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 3rem; // Più spazio tra immagine e testo
   background-color: $color-white;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 3rem; // Più padding interno
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); // Ombra leggera
 
-  // Su schermi più grandi (da 768px in su), usa 2 colonne
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr; // Immagine leggermente più grande del testo
   }
 }
 
 .imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  padding: 2rem; // Più padding interno all'immagine
+  border: 1px solid $color-border;
+  border-radius: 4px;
 }
 
 .image {
   max-width: 100%;
-  max-height: 400px;
+  max-height: 450px; // Immagine più grande
   object-fit: contain;
 }
 
@@ -38,41 +37,69 @@
 }
 
 .category {
-  /* ...stili per categoria, titolo, prezzo, ecc. ... */
+  font-family: $font-body;
+  font-size: 0.95rem;
+  color: #888; // Colore più tenue
+  text-transform: uppercase; // Maiuscolo
+  letter-spacing: 0.05em; // Spaziatura
+  margin-bottom: 0.8rem;
 }
+
 .title {
-  /* ... */
+  font-family: $font-heading;
+  font-size: 2.5rem; // Titolo molto più grande
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: $color-primary;
+  line-height: 1.2;
 }
+
 .rating {
-  /* ... */
-}
-.price {
-  /* ... */
-}
-.description {
-  /* ... */
-}
-
-.addToCartButton {
-  background-color: $color-secondary;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
   color: $color-text;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  text-align: center;
-
-  &:hover {
-    background-color: darken($color-secondary, 10%);
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
   }
 }
 
-.loading,
-.error {
+.price {
+  font-family: $font-heading; // Prezzo con font serif
+  font-size: 2.8rem; // Prezzo molto grande
+  font-weight: 700;
+  color: $color-secondary;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.05rem; // Testo leggermente più grande
+  line-height: 1.7; // Interlinea più ampia
+  margin-bottom: 2.5rem;
+  color: $color-text;
+  flex-grow: 1;
+}
+
+.addToCartButton {
+  background-color: $color-primary; // Pulsante con colore primario
+  color: $color-white;
+  border: none;
+  padding: 1rem 2rem; // Padding generoso
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
   text-align: center;
-  padding: 4rem 0;
-  font-size: 1.25rem;
+
+  &:hover {
+    background-color: lighten(
+      $color-primary,
+      10%
+    ); // Leggermente più chiaro all'hover
+    transform: translateY(-2px);
+  }
 }

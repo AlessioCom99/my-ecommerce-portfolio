@@ -1,35 +1,113 @@
-@import "../styles/variables"; // Importa le variabili di colore
+// src/components/Header.module.scss
+@import "../styles/variables";
 
+// .header ora è solo un wrapper per centrare la "pillola"
 .header {
-  background-color: $color-primary;
-  color: $color-white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem; // Spazio sopra e sotto la pillola
 }
 
+// .headerContent è la "pillola" fluttuante
 .headerContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; // Spinge i 3 blocchi ai lati
   align-items: center;
+
+  max-width: 1400px; // Larghezza massima della pillola
+  margin: 0 auto; // Centra la pillola
+
+  background-color: $color-primary; // Sfondo scuro
+  color: $color-white; // Testo bianco
+
+  padding: 1.25rem 2.5rem; // Padding interno generoso
+  border-radius: 50px; // Bordi super-arrotondati
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); // Ombra per l'effetto "floating"
+}
+
+// --- Sezione Sinistra (Home) ---
+.navLeft {
+  flex: 1; // Occupa 1/3 dello spazio
+  display: flex;
+  justify-content: flex-start; // Allinea a sinistra
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7; // Semplice effetto hover
+    }
+  }
+}
+
+// --- Sezione Centrale (Logo) ---
+.logoContainer {
+  flex: 1; // Occupa 1/3 dello spazio
+  text-align: center; // Centra il logo
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: $color-white;
+  font-family: $font-heading; // Font Serif
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $color-white; // Logo bianco
   text-decoration: none;
 }
 
-.nav {
-  a {
-    // Stile "annidato" grazie a SCSS
-    color: $color-white;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-size: 1.1rem;
+// --- Sezione Destra (Carrello) ---
+.navRight {
+  flex: 1; // Occupa 1/3 dello spazio
+  display: flex;
+  justify-content: flex-end; // Allinea a destra
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
+// Stile "Ghost Button" per il carrello
+.cartButton {
+  color: $color-white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: 2px solid $color-white; // Bordo bianco
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px; // Pillola
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $color-white; // All'hover, diventa solido
+    color: $color-primary; // Testo scuro
+  }
+}
+
+// --- Responsive per Mobile ---
+@media (max-width: 900px) {
+  .header {
+    padding: 1rem; // Meno padding
+  }
+
+  .headerContent {
+    // Su mobile, il layout a 3 blocchi diventa difficile
+    // Li mettiamo in colonna
+    flex-direction: column;
+    gap: 1.25rem; // Spazio tra gli elementi
+    border-radius: 20px; // Meno arrotondato
+    padding: 1.5rem;
+  }
+
+  // Resetta l'allineamento
+  .navLeft,
+  .logoContainer,
+  .navRight {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cartButton {
+    padding: 0.5rem 1rem;
   }
 }

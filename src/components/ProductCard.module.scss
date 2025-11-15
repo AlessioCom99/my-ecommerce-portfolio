@@ -1,30 +1,31 @@
+// src/components/ProductCard.module.scss
 @import "../styles/variables";
 
 .card {
   background-color: $color-white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid $color-border; // Bordo più sottile
+  border-radius: 4px; // Bordi leggermente meno arrotondati
   overflow: hidden;
   text-decoration: none;
   color: $color-text;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); // Ombra leggermente più pronunciata
+  transition: all 0.2s ease-in-out; // Transizione più ampia
+
   display: flex;
   flex-direction: column;
   height: 100%;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px); // Si solleva di più
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); // Ombra più marcata
   }
 }
 
 .imageContainer {
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  height: 280px; // Altezza leggermente maggiore
+  padding: 1.5rem; // Più padding interno
+  background-color: $color-background; // Sfondo dell'immagine più chiaro
+  border-bottom: 1px solid $color-border; // Bordo sotto l'immagine
 }
 
 .image {
@@ -34,8 +35,7 @@
 }
 
 .info {
-  padding: 1rem;
-  border-top: 1px solid #eee;
+  padding: 1.25rem; // Più padding
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -43,21 +43,17 @@
 }
 
 .title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-
-  // Trucco per tagliare il testo dopo 2 righe
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 2.9em;
+  font-family: $font-heading; // Titolo usa il font serif
+  font-size: 1.15rem; // Leggermente più grande
+  font-weight: 700; // Più bold
+  margin-bottom: 0.75rem;
+  color: $color-primary; // Colore del titolo più scuro
+  height: 3.2em; // Adegua l'altezza per 2 righe con il nuovo font
 }
 
 .price {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: $color-primary;
+  font-size: 1.35rem; // Prezzo più grande
+  font-weight: 700;
+  color: $color-secondary; // Colore dell'accento
+  margin-top: 0.5rem; // Spazio dal titolo
 }

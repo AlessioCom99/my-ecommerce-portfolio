@@ -1,17 +1,27 @@
-// Importa prima le variabili e il reset
+// src/styles/main.scss
 @import "variables";
 @import "reset";
 
-// Stili globali per l'intero sito
 body {
-  font-family: $font-main;
+  font-family: $font-body; // Applica il font per il corpo
   background-color: $color-background;
   color: $color-text;
+  line-height: 1.6; // Aumenta l'interlinea per maggiore leggibilità
 }
 
-// Classe 'utility' per centrare il contenuto
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading; // Applica il font per i titoli
+  color: $color-primary; // I titoli sono più scuri
+  margin-bottom: 0.8em; // Spazio sotto i titoli
+}
+
 .container {
-  max-width: 1200px;
+  max-width: 1400px; // Aumentiamo la larghezza massima per più spazio
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem 2rem; // Più padding
 }

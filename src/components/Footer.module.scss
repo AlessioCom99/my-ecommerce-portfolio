@@ -1,7 +1,12 @@
+// src/components/Footer.module.scss
+@import "../styles/variables";
+
 .footer {
   text-align: center;
-  padding: 2rem 0;
-  margin-top: 2rem;
-  background-color: #f8f8f8;
-  border-top: 1px solid #ddd;
+  padding: 2.5rem 2rem; // Più padding
+  margin-top: 4rem; // Più spazio sopra
+  background-color: $color-white; // Sfondo bianco
+  border-top: 1px solid $color-border; // Bordo sottile
+  color: $color-text;
+  font-size: 0.9rem;
 }

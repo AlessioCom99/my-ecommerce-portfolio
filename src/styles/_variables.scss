@@ -1,7 +1,10 @@
-$color-primary: #0a4a8f;
-$color-secondary: #f0c14b;
-$color-text: #111;
-$color-background: #eaeded;
-$color-white: #ffffff;
+// src/styles/_variables.scss
+$color-primary: #333333; // Quasi nero per testo importante
+$color-secondary: #f0a500; // Un arancione/oro per accenti
+$color-text: #555555; // Grigio scuro per testo normale
+$color-background: #f8f8f8; // Sfondo molto chiaro
+$color-white: #ffffff; // Bianco
+$color-border: #e0e0e0; // Bordo chiar
 
-$font-main: Arial, sans-serif;
+$font-heading: "Noto Sans", sans-serif; // Nuovo font per titoli
+$font-body: "Manrope", sans-serif; // Nuovo font per i testi

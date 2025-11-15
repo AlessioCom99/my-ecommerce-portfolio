@@ -1,30 +1,36 @@
+// src/components/Header.tsx
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Importa l'hook del carrello
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
-  // Accede allo stato del carrello
   const { cartItems } = useCart();
-
-  // Calcola il totale degli articoli (somma le quantità)
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
+    // L' <header> ora funge solo da contenitore per posizionare la "pillola"
     <header className={styles.header}>
-      <div className={`${styles.headerContent} container`}>
-        {/* Link alla Home */}
-        <Link to="/" className={styles.logo}>
-          Mio E-Commerce
-        </Link>
-
-        {/* Navigazione */}
-        <nav className={styles.nav}>
+      {/* Questo è il nuovo "header pill" scuro */}
+      <div className={styles.headerContent}>
+        {/* 1. SEZIONE SINISTRA (Navigazione) */}
+        <nav className={styles.navLeft}>
           <Link to="/">Home</Link>
-          <Link to="/cart">
-            {/* Mostra il numero di articoli dinamicamente */}
+          {/* Potremmo aggiungere altri link qui, es. "Prodotti" */}
+        </nav>
+
+        {/* 2. SEZIONE CENTRALE (Logo) */}
+        <div className={styles.logoContainer}>
+          <Link to="/" className={styles.logo}>
+            Mio E-Commerce
+          </Link>
+        </div>
+
+        {/* 3. SEZIONE DESTRA (Azioni, es. Carrello) */}
+        <div className={styles.navRight}>
+          <Link to="/cart" className={styles.cartButton}>
             Carrello ({totalItems})
           </Link>
-        </nav>
+        </div>
       </div>
     </header>
   );

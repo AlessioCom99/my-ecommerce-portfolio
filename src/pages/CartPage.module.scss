@@ -1,75 +1,91 @@
+// src/pages/CartPage.module.scss
 @import "../styles/variables";
 
 .emptyCart {
   text-align: center;
-  padding: 4rem 0;
-  font-size: 1.2rem;
+  padding: 6rem 0;
+  font-size: 1.4rem;
+  font-family: $font-heading;
+  color: $color-primary;
 }
 
 .cartItem {
   display: flex;
   background-color: $color-white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  padding: 1.5rem; // Più padding
+  margin-bottom: 1.2rem; // Più spazio tra gli item
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); // Ombra leggera
 }
 
 .image {
-  width: 80px;
-  height: 80px;
+  width: 100px; // Immagine più grande
+  height: 100px;
   object-fit: contain;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  border: 1px solid $color-border; // Bordo all'immagine
+  border-radius: 4px;
+  padding: 0.5rem;
 }
 
 .info {
-  flex-grow: 1; // Occupa lo spazio disponibile
+  flex-grow: 1;
 }
 
 .title {
-  font-size: 1.1rem;
+  font-family: $font-heading; // Titolo con font serif
+  font-size: 1.2rem; // Titolo più grande
   font-weight: 600;
   text-decoration: none;
-  color: $color-text;
+  color: $color-primary;
   &:hover {
     text-decoration: underline;
   }
 }
 
 .quantity {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: $color-text;
+  margin: 0.5rem 0;
 }
 
 .actions {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
 }
 
 .price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-family: $font-heading; // Prezzo con font serif
+  font-size: 1.6rem; // Prezzo più grande
+  font-weight: 700;
+  color: $color-secondary;
 }
 
 .removeButton {
-  background-color: #e63946;
+  background-color: #dc3545; // Rosso più acceso
   color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem; // Più padding
+  font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
   &:hover {
-    background-color: darken(#e63946, 10%);
+    background-color: darken(#dc3545, 10%);
   }
 }
 
 .total {
   text-align: right;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 1.5rem;
+  font-size: 1.8rem; // Totale più grande
+  font-weight: 700;
+  margin-top: 2rem;
+  color: $color-primary;
+  padding-top: 1.5rem;
+  border-top: 2px solid $color-border; // Bordo superiore marcato
 }

@@ -1,15 +1,19 @@
+// src/pages/HomePage.module.scss
+@import "../styles/variables";
+
 .productGrid {
   display: grid;
-  // Crea colonne "responsive": larghe almeno 280px,
-  // e si adattano per riempire lo spazio (auto-fit)
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem; // Spazio tra le card
-  padding: 1rem 0;
+  // Aumenta la dimensione minima delle card per dare più respiro
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem; // Più spazio tra le card
+  padding: 2rem 0; // Più padding
 }
 
 .loading,
 .error {
   text-align: center;
-  padding: 4rem 0;
-  font-size: 1.25rem;
+  padding: 6rem 0; // Più spazio verticale
+  font-size: 1.4rem; // Testo più grande
+  font-family: $font-heading; // Font dei titoli per questi messaggi
+  color: $color-primary;
 }

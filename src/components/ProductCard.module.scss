@@ -3,29 +3,29 @@
 
 .card {
   background-color: $color-white;
-  border: 1px solid $color-border; // Bordo più sottile
-  border-radius: 4px; // Bordi leggermente meno arrotondati
+  border: 1px solid $color-border; 
+  border-radius: 4px; 
   overflow: hidden;
   text-decoration: none;
   color: $color-text;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); // Ombra leggermente più pronunciata
-  transition: all 0.2s ease-in-out; // Transizione più ampia
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+  transition: all 0.2s ease-in-out; 
 
   display: flex;
   flex-direction: column;
   height: 100%;
 
   &:hover {
-    transform: translateY(-8px); // Si solleva di più
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); // Ombra più marcata
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
   }
 }
 
 .imageContainer {
-  height: 280px; // Altezza leggermente maggiore
-  padding: 1.5rem; // Più padding interno
-  background-color: $color-background; // Sfondo dell'immagine più chiaro
-  border-bottom: 1px solid $color-border; // Bordo sotto l'immagine
+  height: 280px; 
+  padding: 1.5rem; 
+  background-color: $color-background; 
+  border-bottom: 1px solid $color-border; 
 }
 
 .image {
@@ -35,7 +35,7 @@
 }
 
 .info {
-  padding: 1.25rem; // Più padding
+  padding: 1.25rem; 
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -43,17 +43,17 @@
 }
 
 .title {
-  font-family: $font-heading; // Titolo usa il font serif
-  font-size: 1.15rem; // Leggermente più grande
-  font-weight: 700; // Più bold
+  font-family: $font-heading; 
+  font-size: 1.15rem; 
+  font-weight: 700; 
   margin-bottom: 0.75rem;
-  color: $color-primary; // Colore del titolo più scuro
-  height: 3.2em; // Adegua l'altezza per 2 righe con il nuovo font
+  color: $color-primary; 
+  height: 3.2em; 
 }
 
 .price {
-  font-size: 1.35rem; // Prezzo più grande
+  font-size: 1.35rem; 
   font-weight: 700;
-  color: $color-secondary; // Colore dell'accento
-  margin-top: 0.5rem; // Spazio dal titolo
+  color: $color-secondary; 
+  margin-top: 0.5rem; 
 }

@@ -30,10 +30,6 @@ const HomePage = () => {
       <h2>I nostri prodotti</h2>
 
       <div className={styles.productGrid}>
-        {/* Usiamo .map() per "ciclare" sull'array di prodotti.
-          Per ogni 'product' nell'array, crea un componente <ProductCard>.
-          La 'key' è obbligatoria per React per ottimizzare le liste.
-        */}
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />

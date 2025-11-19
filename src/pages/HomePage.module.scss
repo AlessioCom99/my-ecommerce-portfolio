@@ -3,17 +3,16 @@
 
 .productGrid {
   display: grid;
-  // Aumenta la dimensione minima delle card per dare più respiro
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem; // Più spazio tra le card
-  padding: 2rem 0; // Più padding
+  gap: 2.5rem; 
+  padding: 2rem 0; 
 }
 
 .loading,
 .error {
   text-align: center;
-  padding: 6rem 0; // Più spazio verticale
-  font-size: 1.4rem; // Testo più grande
-  font-family: $font-heading; // Font dei titoli per questi messaggi
+  padding: 6rem 0; 
+  font-size: 1.4rem; 
+  font-family: $font-heading; 
   color: $color-primary;
 }

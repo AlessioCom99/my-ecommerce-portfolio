@@ -1,5 +1,5 @@
 import React from "react";
-import type { Product } from "../types/Product"; // Importa il TIPO
+import type { Product } from "../types/Product"; 
 import styles from "./ProductCard.module.scss";
 import { Link } from "react-router-dom";
 
@@ -16,10 +16,8 @@ const formatPrice = (price: number) => {
   }).format(price);
 };
 
-// React.FC = Componente Funzionale
 const ProductCard: React.FC<Props> = ({ product }) => {
   return (
-    // L'intera card è un link alla pagina di dettaglio
     <Link to={`/product/${product.id}`} className={styles.card}>
       {/* Contenitore Immagine */}
       <div className={styles.imageContainer}>

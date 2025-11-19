@@ -1,35 +1,34 @@
 // src/components/Header.module.scss
 @import "../styles/variables";
 
-// .header ora è solo un wrapper per centrare la "pillola"
+
 .header {
-  padding: 1rem 2rem; // Spazio sopra e sotto la pillola
+  padding: 1rem 2rem; 
 }
 
-// .headerContent è la "pillola" fluttuante
+
 .headerContent {
   display: flex;
-  justify-content: space-between; // Spinge i 3 blocchi ai lati
+  justify-content: space-between;
   align-items: center;
 
-  max-width: 1400px; // Larghezza massima della pillola
-  margin: 0 auto; // Centra la pillola
+  max-width: 1400px;
+  margin: 0 auto;
 
-  background-color: $color-primary; // Sfondo scuro
-  color: $color-white; // Testo bianco
+  background-color: $color-primary;
+  color: $color-white;
 
-  padding: 1.25rem 2.5rem; // Padding interno generoso
-  border-radius: 50px; // Bordi super-arrotondati
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); // Ombra per l'effetto "floating"
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 // --- Sezione Sinistra (Home) ---
 .navLeft {
-  flex: 1; // Occupa 1/3 dello spazio
+  flex: 1; 
   display: flex;
-  justify-content: flex-start; // Allinea a sinistra
-
+  justify-content: flex-start;
   a {
     color: $color-white;
     text-decoration: none;
@@ -38,30 +37,30 @@
     transition: opacity 0.2s ease;
 
     &:hover {
-      opacity: 0.7; // Semplice effetto hover
+      opacity: 0.7; 
     }
   }
 }
 
 // --- Sezione Centrale (Logo) ---
 .logoContainer {
-  flex: 1; // Occupa 1/3 dello spazio
-  text-align: center; // Centra il logo
+  flex: 1; 
+  text-align: center; 
 }
 
 .logo {
-  font-family: $font-heading; // Font Serif
+  font-family: $font-heading; 
   font-size: 1.8rem;
   font-weight: 700;
-  color: $color-white; // Logo bianco
+  color: $color-white; 
   text-decoration: none;
 }
 
 // --- Sezione Destra (Carrello) ---
 .navRight {
-  flex: 1; // Occupa 1/3 dello spazio
+  flex: 1; 
   display: flex;
-  justify-content: flex-end; // Allinea a destra
+  justify-content: flex-end; 
 }
 
 // Stile "Ghost Button" per il carrello
@@ -70,33 +69,30 @@
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
-  border: 2px solid $color-white; // Bordo bianco
+  border: 2px solid $color-white; 
   padding: 0.6rem 1.2rem;
-  border-radius: 50px; // Pillola
+  border-radius: 50px; 
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: $color-white; // All'hover, diventa solido
-    color: $color-primary; // Testo scuro
+    background-color: $color-white;
+    color: $color-primary; 
   }
 }
 
 // --- Responsive per Mobile ---
 @media (max-width: 900px) {
   .header {
-    padding: 1rem; // Meno padding
+    padding: 1rem; 
   }
 
   .headerContent {
-    // Su mobile, il layout a 3 blocchi diventa difficile
-    // Li mettiamo in colonna
     flex-direction: column;
-    gap: 1.25rem; // Spazio tra gli elementi
-    border-radius: 20px; // Meno arrotondato
+    gap: 1.25rem; 
+    border-radius: 20px; 
     padding: 1.5rem;
   }
 
-  // Resetta l'allineamento
   .navLeft,
   .logoContainer,
   .navRight {

@@ -22,9 +22,8 @@ interface Props {
   children: ReactNode;
 }
 
-// 2. Creazione del Provider (il componente che CONTIENE la logica)
+// 2. Creazione del Provider 
 export const CartProvider: React.FC<Props> = ({ children }) => {
-  // Questo è lo stato REALE del carrello
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // Funzione per aggiungere un prodotto
@@ -32,27 +31,23 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
-        // Se esiste, aumenta la quantità
         return prevItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        // Se non esiste, aggiungilo all'array
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
   };
 
-  // Funzione per rimuovere un prodotto
   const removeFromCart = (productId: number) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
     );
   };
 
-  // Il "value" è l'oggetto che i componenti consumer riceveranno
   const value = {
     cartItems,
     addToCart,
@@ -62,7 +57,6 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-// 3. Hook personalizzato per usare il contesto (una scorciatoia)
 export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {

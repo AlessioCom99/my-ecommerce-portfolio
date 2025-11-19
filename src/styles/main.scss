@@ -3,10 +3,10 @@
 @import "reset";
 
 body {
-  font-family: $font-body; // Applica il font per il corpo
+  font-family: $font-body;
   background-color: $color-background;
   color: $color-text;
-  line-height: 1.6; // Aumenta l'interlinea per maggiore leggibilità
+  line-height: 1.6;
 }
 
 h1,
@@ -15,13 +15,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-heading; // Applica il font per i titoli
-  color: $color-primary; // I titoli sono più scuri
-  margin-bottom: 0.8em; // Spazio sotto i titoli
+  font-family: $font-heading;
+  color: $color-primary;
+  margin-bottom: 0.8em;
 }
 
 .container {
-  max-width: 1400px; // Aumentiamo la larghezza massima per più spazio
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem 2rem; // Più padding
+  padding: 1.5rem 2rem;
 }

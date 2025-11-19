@@ -14,18 +14,18 @@
   background-color: $color-white;
   border: 1px solid $color-border;
   border-radius: 4px;
-  padding: 1.5rem; // Più padding
-  margin-bottom: 1.2rem; // Più spazio tra gli item
+  padding: 1.5rem; 
+  margin-bottom: 1.2rem; 
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); // Ombra leggera
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
 }
 
 .image {
-  width: 100px; // Immagine più grande
+  width: 100px; 
   height: 100px;
   object-fit: contain;
   margin-right: 1.5rem;
-  border: 1px solid $color-border; // Bordo all'immagine
+  border: 1px solid $color-border; 
   border-radius: 4px;
   padding: 0.5rem;
 }
@@ -35,8 +35,8 @@
 }
 
 .title {
-  font-family: $font-heading; // Titolo con font serif
-  font-size: 1.2rem; // Titolo più grande
+  font-family: $font-heading; 
+  font-size: 1.2rem; 
   font-weight: 600;
   text-decoration: none;
   color: $color-primary;
@@ -60,17 +60,17 @@
 }
 
 .price {
-  font-family: $font-heading; // Prezzo con font serif
-  font-size: 1.6rem; // Prezzo più grande
+  font-family: $font-heading; 
+  font-size: 1.6rem; 
   font-weight: 700;
   color: $color-secondary;
 }
 
 .removeButton {
-  background-color: #dc3545; // Rosso più acceso
+  background-color: #dc3545; 
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem; // Più padding
+  padding: 0.6rem 1.2rem; 
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -82,10 +82,10 @@
 
 .total {
   text-align: right;
-  font-size: 1.8rem; // Totale più grande
+  font-size: 1.8rem; 
   font-weight: 700;
   margin-top: 2rem;
   color: $color-primary;
   padding-top: 1.5rem;
-  border-top: 2px solid $color-border; // Bordo superiore marcato
+  border-top: 2px solid $color-border; 
 }

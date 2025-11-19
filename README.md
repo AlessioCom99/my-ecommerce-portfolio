@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Mio E-Commerce Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Questo progetto è un'applicazione e-commerce frontend sviluppata per dimostrare competenze avanzate nello sviluppo web moderno. L'applicazione è una Single Page Application (SPA) completamente reattiva, che integra chiamate API asincrone e gestione dello stato globale.
 
-Currently, two official plugins are available:
+Il design è stato personalizzato con uno stile distintivo, utilizzando una tipografia curata e un layout moderno per offrire un'esperienza utente professionale.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Panoramica del Progetto
 
-## React Compiler
+L'obiettivo principale di questo progetto è mostrare la capacità di costruire un'applicazione React scalabile e manutenibile utilizzando TypeScript. Le funzionalità principali includono la navigazione tra i prodotti, la visualizzazione dei dettagli di ogni articolo, la ricerca e la gestione completa di un carrello della spesa.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funzionalità Principali
 
-## Expanding the ESLint configuration
+* **Architettura a Componenti:** Utilizzo di React per creare componenti riutilizzabili e modulari.
+* **Type Safety:** Intero codice scritto in TypeScript per garantire la robustezza e prevenire errori a runtime.
+* **Gestione dello Stato Globale:** Implementazione della Context API di React per gestire lo stato del carrello (aggiunta, rimozione, calcolo totali) accessibile da qualsiasi parte dell'app.
+* **Routing Dinamico:** Utilizzo di React Router per la navigazione lato client senza ricaricamento della pagina (Home, Dettaglio Prodotto, Carrello, 404).
+* **Integrazione API:** Recupero dati in tempo reale da FakeStoreAPI utilizzando fetch asincrone.
+* **Custom Hooks:** Creazione di hook personalizzati (es. `useFetchData`) per astrarre la logica di fetching e gestire gli stati di caricamento ed errore.
+* **Styling Avanzato:** Utilizzo di SCSS con approccio CSS Modules per stili locali e variabili globali.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack Tecnologico
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Frontend Framework:** React
+* **Linguaggio:** TypeScript
+* **Build Tool:** Vite
+* **Styling:** SCSS (Sass) & CSS Modules
+* **Routing:** React Router DOM
+* **State Management:** React Context API
+* **Version Control:** Git & GitHub
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Struttura del Progetto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Il codice è organizzato seguendo le best practices per garantire leggibilità e scalabilità:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* `src/components`: Componenti UI riutilizzabili (Header, Footer, ProductCard).
+* `src/pages`: Componenti che rappresentano le viste intere (HomePage, CartPage, ProductDetailPage).
+* `src/context`: Logica per lo stato globale (CartContext).
+* `src/hooks`: Logica riutilizzabile (useFetchData).
+* `src/styles`: Configurazioni SCSS globali, variabili e reset.
+* `src/types`: Definizioni delle interfacce TypeScript (Product, ecc.).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installazione e Avvio in Locale
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Per eseguire questo progetto sul tuo computer locale, segui questi passaggi:
+
+1.  **Clona la repository**
+    ```bash
+    git clone [https://github.com/IL_TUO_USERNAME/IL_TUO_REPO.git](https://github.com/IL_TUO_USERNAME/IL_TUO_REPO.git)
+    ```
+
+2.  **Entra nella cartella del progetto**
+    ```bash
+    cd IL_TUO_REPO
+    ```
+
+3.  **Installa le dipendenze**
+    ```bash
+    npm install
+    ```
+
+4.  **Avvia il server di sviluppo**
+    ```bash
+    npm run dev
+    ```
+
+L'applicazione sarà accessibile all'indirizzo `http://localhost:5173`.
+
+## Crediti
+
+I dati dei prodotti (immagini, descrizioni, prezzi) sono forniti gratuitamente da [FakeStoreAPI](https://fakestoreapi.com/).

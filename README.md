@@ -4,6 +4,17 @@ Questo progetto è un'applicazione e-commerce frontend sviluppata per dimostrare
 
 Il design è stato personalizzato con uno stile distintivo, utilizzando una tipografia curata e un layout moderno per offrire un'esperienza utente professionale.
 
+---
+
+<img width="1256" height="611" alt="my-ecommerce-home" src="https://github.com/user-attachments/assets/ac2d897f-26a0-4001-9795-6388a0cd4b66" />
+
+---
+
+<img width="1254" height="610" alt="my-ecommerce-scheda" src="https://github.com/user-attachments/assets/049cf235-e20f-4b60-8822-cbffba701f7f" />
+
+
+---
+
 ## Panoramica del Progetto
 
 L'obiettivo principale di questo progetto è mostrare la capacità di costruire un'applicazione React scalabile e manutenibile utilizzando TypeScript. Le funzionalità principali includono la navigazione tra i prodotti, la visualizzazione dei dettagli di ogni articolo, la ricerca e la gestione completa di un carrello della spesa.
